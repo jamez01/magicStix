@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+    <meta charset="utf-8">
+
+    <title> test </title>
+  </head>
+  <body>
+    <content>
+    <!-- <p content='your IP is <%= ip %>' vars="http://ip.jsontest.com/" remote="/ip.html"></p> -->
+    <p remote content='' vars='{"stack":"updated"}'></p>
+    <p vars='{"content": "Uses inline json"}' remote="/test2.html"></p>
+    <p vars='/test.json' remote="/test2.html"></p>
+    <p>This is told not to be parsed by ejs: <span norender remote='/test2.html'>Loading..</span></p>
+    <p id="linkTest">This elmement will be replaced by the first link</p>
+    <a local vars='{"content":"is a link"}' dest-id="linkTest" href="/test2.html">Link replaces element</a>
+    <a local vars='{"content":"like an external link"}' href="/test2.html">Link replaces entire body</a>
+    </content>
+  </body>
+
+  <script src="src/magicstix.js"></script>
+
+</html>
